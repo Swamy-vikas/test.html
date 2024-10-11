@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>MD Technologies</title>
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #0d2d61;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 30px;
+            border-radius: 10px;
+            margin-left: -1200px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            height: 3px;
+            width: 25px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 20%;
+                position: absolute;
+                top: 60px;
+                left: 540px;
+                align-items: center;
+                background-color: #0d2d61;
+                padding: 20px 0;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+
+        .header-content {
+            text-align: center;
+            background-color: #fff; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+            max-width: 2000px;
+            width: 100%;
+        }
+
+        .header-content img {
+            width: 3500px;
+            height: 800px;
+            max-width: 100%;
+        }
+
+        .header-content h2 {
+            color: white;
+            font-size: 40px;
+            margin: 20px 0 10px;
+            margin-top: -500px;
+            animation: zoomInOut 3s infinite;
+        }
+
+        .header-content p {
+            color: white;
+            margin: 10px 0;
+            font-size: 25px;
+        }
+
+        .blurred-img {
+            width: 300px; /* Adjust the size as needed */
+            height: auto;
+            filter: blur(5px); /* Adjust the blur radius as needed */
+        }
+
+        .header-content .ctn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: blue;
+            font-size: 25px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+
+        .header-content .ctn:hover {
+            background-color: green;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomInOut {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 15px;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 250px;
+            padding: 20px;
+        }
+
+        .box {
+            background: peachpuff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            display: inline-block;
+            width: 100%;
+            transition: transform 0.3s;
+            vertical-align: top;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .box {
+                width: 80%;
+                margin: 10px 0;
+            }
+        }
+
+        .content {
+            text-align: left;
+            font-size: 24px;
+        }
+
+
+
+             body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0px;
+        }
+
+        .header h1 {
+            color: black;
+        }
+
+        .logo {
+            display: inline-block;
+            margin: 20px;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .logo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+            
+        }
+
+
+        .text {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .slideshow {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            width: 1000%;
+            transition: transform 1s ease;
+        }
+
+        .slide {
+            width: 100%;
+            flex: 1 0 10%;s
+        }
+
+        .slide img {
+            width: 100%;
+            height: 40%;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 20%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .nav-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .text h1, .text p {
+                font-size: 1em;
+            }
+        }
+
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        footer {
+            background-color: #0d2d61;
+            color: #fff;
+            height: 120vh;
+            padding: 20px 0;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: -1100px;
+            animation: slideIn 2s ease-in-out;
+        }
+
+        .container1 {
+            max-width: 1200px;
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .text h1{
+            color:black;
+            margin-top: -100px;
+        }
+
+        .logo {
+            flex: 1;
+            justify-content: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .logo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+
+        .contact-info {
+            flex: 2;
+            list-style: none;
+            padding: 0;
+            margin-top:100px;
+        }
+
+        .contact-info li {
+            margin: 10px 0;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 20px;
+            }
+        }
+
+        .logos img{
+            height: 150px;
+            width: 150px;
+            margin: 45px;
+        }
+
+    </style>
+
+   <header class="header">
+        <div class="logo">
+            <img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\MDT.jpeg" alt="Logo">
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#header-content">Home</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Clients">Our Clients</a></li>
+            <li><a href="#gallery">Infrastructure</a></li>
+            <li><a href="#footer">Contact Us</a></li>
+        </ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+        <div class="header-content" id="header-content">
+        <img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\cnc1.jpg">
+        <br><br>
+        <h2>MD Technologies, Vishakapatnam</h2>
+        <p><strong>CNC Machineries Manufacturing.<br>
+            Here Manufacturing all kinds of CNC milling and <br> bending/turning jobs take place.</strong></p>
+        <a href="#About" class="ctn">Get Started</a>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div class="container" id="About">
+        <div>
+            <h1><center>About Us</center></h1>
+        </div>
+        <div class="box">
+            <h2><center>Our Vision</center></h2>
+            <div class="content">
+                <p>"To be the global leader in precision manufacturing, renowned for pioneering advanced CNC milling, bending, and fabrication solutions that drive innovation and exceed industry standards. We envision a future where our cutting-edge technology and unwavering commitment to quality empower our clients to achieve their most ambitious goals and transform their industries."</p>
+            </div>
+        </div>
+        <div class="box">
+            <h2><center>Our Mission</center></h2>
+            <div class="content">
+                <p>"At MD Technologies, our mission is to deliver exceptional CNC milling, bending, and fabrication services that combine precision engineering with personalized solutions. We are dedicated to enhancing our clients' success through innovation, quality, and superior customer service. By investing in advanced technology and skilled craftsmanship, we strive to provide reliable, high-quality products that meet the diverse needs of our clients while fostering sustainable practices and continuous improvement."</p>
+            </div>
+        </div>
+        <div class="box">
+            <h2><center>Why Choose Us?</center></h2>
+            <div class="content">
+                <p>MD Technologies is a leading enterprise specializing in comprehensive manufacturing solutions, offering expertise in CNC milling, CNC turning (bending), and a wide range of fabrication services. Our commitment to precision and quality positions us as a key player in the manufacturing industry.‍</p>
+                <p><li>CNC Milling:<br>At MD Technologies, our CNC milling services are designed to meet the highest standards of accuracy and efficiency. Our state-of-the-art CNC milling machines are capable of performing complex cuts, drilling, and shaping tasks with exceptional precision. Whether you need intricate prototypes or high-volume production parts, our team ensures that each component meets stringent tolerances and specifications.‍</li></p>
+                <p><li>CNC Turning:<br>Our CNC turning capabilities are central to our operations, providing the ability to produce high-quality cylindrical parts and components. Using advanced CNC turning technology, we can handle various materials and create parts with precise dimensions and surface finishes. From small, detailed components to larger, robust parts, our turning services are tailored to meet diverse manufacturing needs.‍</li></p>
+                <p><li>Fabrication:<br>MD Technologies excels in fabrication, a critical process that encompasses cutting, bending, welding, and assembling materials into finished products. Our fabrication services are versatile, allowing us to work with a range of metals and materials to produce custom solutions that meet specific client requirements. Our experienced fabricators ensure that every piece is crafted with attention to detail and adheres to industry standards.</li></p>
+            </div>
+        </div>
+    </div>
+
+   <div class="container" id="Clients">
+        <div>
+            <h1><center>Our Clients</center></h1>
+        </div>
+        <div class="logos">
+            <div class="logo"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\logo1.jpg" alt="HTML Logo 1"></div>
+            <div class="logo"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\logo3.jpg" alt="HTML Logo 2"></div>
+            <div class="logo"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\logo2.jpg" alt="HTML Logo 3"></div>
+            <div class="logo"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\logo4.jpg" alt="HTML Logo 4"></div>
+            <div class="logo"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\logo5.jpg" alt="HTML Logo 5"></div>
+            <div class="logo"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\logo6.jpg" alt="HTML Logo 6"></div>
+            <div class="logo"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\logo7.jpg" alt="HTML Logo 7"></div>
+            <div class="logo"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\logo8.jpg" alt="HTML Logo 8"></div>
+        </div>
+    </div><br><br><br>
+
+    <div class="container" id="gallery">
+        <div class="text">
+            <h1>Infrastructure</h1>
+            <p><b>CNC MACHINERIES MANUFACTURED BY MD TECHNOLOGIES.</b></p>
+            <p><b>These are some of the spare parts and products manufactured by our company MD Technologies.<b></p>
+        </div>
+        <div class="slideshow">
+            <div class="slides" id="slides">
+                <div class="slide"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\img1.jpeg" alt="Image 1"></div>
+                <div class="slide"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\img2.jpeg" alt="Image 2"></div>
+                <div class="slide"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\img3.jpeg" alt="Image 3"></div>
+                <div class="slide"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\img4.jpeg" alt="Image 4"></div>
+                <div class="slide"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\img5.jpeg" alt="Image 5"></div>
+                <div class="slide"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\img6.jpeg" alt="Image 6"></div>
+                <div class="slide"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\img7.jpeg" alt="Image 7"></div>
+                <div class="slide"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\img8.jpeg" alt="Image 8"></div>
+                <div class="slide"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\img9.jpeg" alt="Image 9"></div>
+                <div class="slide"><img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\img10.jpeg" alt="Image 10"></div>
+            </div>
+            <div class="navigation">
+                <button class="nav-button" id="prev">&#10094;</button>
+                <button class="nav-button" id="next">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+  
+    <footer>
+        <div class="text" id="footer">
+            <h1><center>Contact Us</center></h1>
+        </div>
+        <div class="container1">
+            <div class="Image">
+                <br><br><br>
+                <img src="C:\Users\vikas\OneDrive\Desktop\MDT\assests\img\MDT.jpeg" alt="Logo" height="180px" width="250px">
+            </div>
+            <ul class="contact-info">
+                <li><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Address:</strong> 123 Street Name, City, Country</li>
+                <li><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:</strong> contact@example.com</li>
+                <li><strong>Mobile:</strong> +123 456 7890</li>
+                <li><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Landline:</strong> +098 765 4321</li>
+                <li><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Website:</strong> www.example.com</li>
+            </ul>
+        </div><br><br><br><br>
+        <div class="google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.078424459014!2d83.19958477591486!3d17.693754993905642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3968fd017223a3%3A0x8db85b67a7f558d4!2s179-180%2C%20Auto%20Nagar%2C%20Visakhapatnam%2C%20Andhra%20Pradesh%20530012!5e0!3m2!1sen!2sin!4v1728557950191!5m2!1sen!2sin" width="1200" height="650" style="border:0;margin-left:-30px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+    </footer>
+
+    <script>
+        const slides = document.getElementById('slides');
+        const prev = document.getElementById('prev');
+        const next = document.getElementById('next');
+        let index = 0;
+
+        function showSlide(i) {
+            index += i;
+            if (index >= slides.children.length) {
+                index = 0;
+            } else if (index < 0) {
+                index = slides.children.length - 1;
+            }
+            slides.style.transform = `translateX(${-index * 100 / slides.children.length}%)`;
+        }
+
+        prev.addEventListener('click', () => showSlide(-1));
+        next.addEventListener('click', () => showSlide(1));
+
+        setInterval(() => showSlide(1), 3000); // Auto-slide every 3 seconds
+    </script>
+
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
