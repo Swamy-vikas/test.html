@@ -667,17 +667,33 @@ ul.contact-info {
         });
 
         function moveToNextSlide() {
-            slideIndex = (slideIndex + 1) % totalSlides;
-            updateSlidePosition();
+            if (slideIndex >= totalSlides - 1) {
+                slideIndex = 1;
+                resetSlidePosition();
+            } else {
+                slideIndex++;
+                updateSlidePosition();
+            }
         }
 
         function moveToPrevSlide() {
-            slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-            updateSlidePosition();
+            if (slideIndex <= 0) {
+                slideIndex = totalSlides - 2;
+                resetSlidePosition();
+            } else {
+                slideIndex--;
+                updateSlidePosition();
+            }
         }
-
         function updateSlidePosition() {
             const slidesContainer = document.getElementById('slides');
+            slidesContainer.style.transition = 'transform 0.5s ease-in-out';
+            slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        function resetSlidePosition() {
+            const slidesContainer = document.getElementById('slides');
+            slidesContainer.style.transition = 'none';
             slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
         }
 
