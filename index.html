@@ -660,28 +660,41 @@ ul.contact-info {
     </footer>
     
     <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.getElementById('nav-links');
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
 
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        }); 
+        document.getElementById('next').addEventListener('click', () => {
+            moveToNextSlide();
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            moveToPrevSlide();
+        });
+
+        function moveToNextSlide() {
+            slideIndex = (slideIndex + 1) % totalSlides;
+            updateSlidePosition();
+        }
+
+        function moveToPrevSlide() {
+            slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+            updateSlidePosition();
+        }
+
+        function updateSlidePosition() {
+            const slidesContainer = document.getElementById('slides');
+            slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        function autoSlide() {
+            moveToNextSlide();
+            setTimeout(autoSlide, 3000); // Change slide every 3 seconds
+        }
+
+        autoSlide();
     </script>
 
-    <script>
-    let slideIndex = 0;
-    const slides = document.querySelector('.slides');
-    const totalSlides = slides.children.length;
 
-    document.getElementById('next').addEventListener('click', () => {
-        slideIndex = (slideIndex + 1) % totalSlides;
-        slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-    });
-
-    document.getElementById('prev').addEventListener('click', () => {
-        slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
-        slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-    });
-</script>
 </body>
 </html>
